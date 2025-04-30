@@ -52,7 +52,7 @@ public class Main {
                     String nombre = scanner.nextLine();
                     System.out.println("Precio: ");
                     double precio = scanner.nextDouble();
-                    System.out.println("Disponible (true/flase): ");
+                    System.out.println("Disponible (true/false): ");
                     boolean disponible = scanner.nextBoolean();
 
                     Producto nuevo = new Producto(id, nombre, precio, disponible);
