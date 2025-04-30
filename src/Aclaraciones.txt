@@ -1,0 +1,17 @@
+ ¿Por qué se usan…?
+✅ removeIf() con lambda
+Permite eliminar elementos de una colección usando una expresión concisa y legible.
+
+Más eficiente y limpio que usar un bucle for clásico con if y remove().
+
+✅ Expresiones lambda (p -> ...)
+Son más expresivas y modernas.
+
+Se usan como funciones anónimas para simplificar lógica repetitiva.
+
+Evitan tener que escribir clases o bucles innecesarios.
+
+✅ Operador ternario (condición ? valorSiVerdadero : valorSiFalso)
+Alternativa corta a if-else para decisiones simples.
+
+Hace el código más compacto y fácil de leer cuando se utiliza bien.
