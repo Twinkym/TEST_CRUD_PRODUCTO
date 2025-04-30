@@ -17,7 +17,7 @@ public class Main {
             System.out.println("4. Actualizar un producto por ID.");
             System.out.println("5. Eliminar un producto por ID.");
             System.out.println("6. Eliminar todos los productos.");
-            System.out.println("0. Salir");
+            System.out.println("7. Salir");
             System.out.println("Seleccione una opción: ");
 
             opcion = scanner.nextInt();  // Captura la opción del usuario.
