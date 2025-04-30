@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -12,8 +13,8 @@ public class Main {
             System.out.println("\n--- Menú de Productos ---");
             System.out.println("1. Mostrar todos los productos.");
             System.out.println("2. Filtrar producto por ID.");
-            System.out.println("3. Guardar producto por ID.");
-            System.out.println("4. Actualizar un nuevo producto.");
+            System.out.println("3. Guardar un nuevo producto.");
+            System.out.println("4. Actualizar un producto por ID.");
             System.out.println("5. Eliminar un producto por ID.");
             System.out.println("6. Eliminar todos los productos.");
             System.out.println("0. Salir");
@@ -25,6 +26,7 @@ public class Main {
             // switch con exprpesiones lambda (Java 14+ admite -> en lugar de break)
             switch (opcion) {
                 case 1 -> {
+                    
                     System.out.println("--- Lista de Prodcutos ---");
                     for (Producto producto : repository.findAll()) {
                         System.out.println(producto);
@@ -34,7 +36,7 @@ public class Main {
                 case 2 -> {
                     System.out.println("Ingrese ID: ");
                     Long id = scanner.nextLong();
-                    Producto producto = repository.findbyId(id);
+                    Producto producto = repository.findById(id);
 
                     // Operador ternario: expresión compacta para decidir qué imprimir es mucho más elegante.
                     System.out.println(producto != null ? producto : "Producto no encontrado.");
@@ -42,6 +44,7 @@ public class Main {
 
                 case 3 -> {
                     // Solicita datos para un nuevo producto.
+                    try {
                     System.out.println("ID: ");
                     Long id = scanner.nextLong();
                     scanner.nextLine();     // Limpia el buffer del scanner.
@@ -52,9 +55,12 @@ public class Main {
                     System.out.println("Disponible (true/flase): ");
                     boolean disponible = scanner.nextBoolean();
 
-                    Producto nuevo = new Producto(id, nombre, precio, false);
+                    Producto nuevo = new Producto(id, nombre, precio, disponible);
                     repository.save(nuevo);     // Guarda el nuevo producto.
-                    System.out.println("Producto guardado.");
+                    System.out.println("Producto guardado correctamente.");
+                } catch (InputMismatchException e) {
+                    System.out.println("Error: Entrada no válida. Intenta de nunevo.");
+                    scanner.nextLine();  // Limpiar entrada inválida.
                 }
 
                 case 4 -> {

@@ -23,7 +23,7 @@ public class Producto {
     public Producto(Long id, String nombre, double precio, boolean disponible) {
 
         this.id = (id != null) ? id : throwIAE("El ID no puede ser null");
-        this.nombre = (nombre != null && !nombre.trim().isEmpty()) ? nombre : throwIAE("El nom no puede ser null ni vacio");
+        this.nombre = (nombre != null && !nombre.trim().isEmpty()) ? nombre : throwIAE("El nombre no puede ser null ni vacio");
         this.precio = (precio >= 0) ? precio : throwIAE("El precio no puede ser negativo.");
         this.disponible = disponible;
     }
@@ -36,8 +36,8 @@ public class Producto {
     }
 
     /**
-     * Asigna el ID del producto.
-     * 
+     * Obtiene el ID del producto.
+     * @return El nombre del producto.
      * @param id ID no nulo.
      * @throws IllegalArgumentEception si el ID es null
      */

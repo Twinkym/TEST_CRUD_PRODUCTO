@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductoRepository {
-    // Lista que simula una base de datos temporal (en memmoria).
+    // Lista que simula una base de datos temporal (en memoria).
     private List<Producto> productos = new ArrayList<>();
 
     // Implementación de los métodos (findall(), findbyId(Long id), save(Producto producto), 
