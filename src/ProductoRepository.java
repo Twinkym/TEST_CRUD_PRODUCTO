@@ -15,7 +15,7 @@ public class ProductoRepository {
     }
 
     // Busca todos los productos existentes.
-    public Producto findbyId(Long Id) {
+    public Producto findById(Long Id) {
         // Busqueda tradicional con bucle.
         for (Producto producto : productos) {
             if (producto.getId().equals(Id))
@@ -44,7 +44,7 @@ public class ProductoRepository {
     public boolean deleteById(Long id) {
         // removeIf() acepta una lambda que define una condición. si es verdadera, elimina el elemento.
         // Este enfoque es más elegante y declarativo que usar un bucle for manual.
-        return productos.removeIf(productos -> productos.getId().equals(id));
+        return productos.removeIf(producto -> producto.getId().equals(id));
     }
 
     // Elimina todos los productos de la lista.
