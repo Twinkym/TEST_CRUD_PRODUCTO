@@ -90,15 +90,14 @@ public class Main {
                         System.out.println("Todos los productos eliminados.");
                     }
 
-                    case 0 -> System.out.println("Saliendo...");
+                    case 7 -> System.out.println("Saliendo...");
                     default -> System.out.println("Opción no válida.");
-                    }            
-                } 
+                }            
+            } 
             catch (InputMismatchException e) {
                     System.out.println("Error: Entrada no válida. Intenta de nunevo.");
                     scanner.nextLine();  // Limpiar entrada inválida.
-            }    
-              
+            }        
                
         }   
         while (opcion != 7);    // Mantiene abierta la ejecución hasta que el usuario selecciona la opción correcta para salir del programa.
